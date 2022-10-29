@@ -8,10 +8,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: setup node.js version 18
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+      - name: Setup Node.js version 18
         uses: actions/setup-node@v3
         with:
-          node-version: '18' 
+          node-version: '18.x'
+          cache: 'npm'
       - run: make setup
       - run: make test
       - run: make lint
