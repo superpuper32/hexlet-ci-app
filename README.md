@@ -1,3 +1,5 @@
+![Hexlet CI App](https://github.com/superpuper32/hexlet-ci-app/actions/workflows/run-project.yml/badge.svg)
+
 # Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
