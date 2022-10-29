@@ -12,8 +12,6 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=high
       - name: Setup Node.js version 18
         uses: actions/setup-node@v3
         with:
